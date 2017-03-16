@@ -46,7 +46,7 @@ public class SelectTagHandler extends SimpleTagSupport implements DynamicAttribu
 		JspWriter out = pageContext.getOut();
 	
 		// Start the HTML <select> tag:
-		out.print("<select >");
+		out.print("<select ");
 		
 		// add mandatory attributes:
 		out.print(String.format(ATTR_TEMPLATE, "name", this.name));
