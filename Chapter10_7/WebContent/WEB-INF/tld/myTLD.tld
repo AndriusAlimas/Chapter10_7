@@ -1,0 +1,34 @@
+<taglib>
+	<tlib-version>1.2</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Forms Taglib</short-name>
+	<uri>http://example.com/tags/forms</uri>
+	<description>An example tag library of replacements for the HTML form tags</description>
+	
+	<tag>
+		<name>select</name>
+		<tag-class>com.example.taglib.SelectTagHandler</tag-class>	
+		<body-content>empty</body-content>
+		<description>
+			This tag constructs an HTML form 'select' tag. It also generates the 'option' tags based on the set of 
+			items in a list passed in by the optionsList tag attribute.
+		</description>
+		
+		<!-- You still need to declare all mandatory attributes. These must have explicit setter
+		methods defined in the tag handler class -->
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+		</attribute>
+		
+		<attribute>
+			<name>optionsList</name>
+			<type>java.util.List</type>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<!-- This element is all you need to declare that this tag may accept any number of dynamic attributes -->
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+</taglib>
